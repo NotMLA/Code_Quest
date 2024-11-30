@@ -147,3 +147,39 @@ function showHint() {
 }
 
 document.getElementById('showHint').addEventListener('click', showHint);
+document.getElementById('run').addEventListener('click', () => {
+  const code = document.getElementById('editor').value;
+  const messageBox = document.getElementById('message');
+  try {
+    eval(code); // Evaluate the player's code (Educational purposes only)
+    messageBox.textContent = "Code executed successfully!";
+    messageBox.style.color = "green";
+    drawGame();
+  } catch (error) {
+    messageBox.textContent = `Error: ${error.message}`;
+    messageBox.style.color = "red";
+  }
+});
+function animateMovement(entity, targetX, targetY, callback) {
+  const interval = setInterval(() => {
+    if (entity.x !== targetX) entity.x += entity.x < targetX ? 0.1 : -0.1;
+    if (entity.y !== targetY) entity.y += entity.y < targetY ? 0.1 : -0.1;
+    drawGame();
+    if (Math.abs(entity.x - targetX) < 0.1 && Math.abs(entity.y - targetY) < 0.1) {
+      entity.x = targetX;
+      entity.y = targetY;
+      clearInterval(interval);
+      if (callback) callback();
+    }
+  }, 16); // Smooth animation frame rate
+}
+
+function movePlayer(direction) {
+  let targetX = player.x;
+  let targetY = player.y;
+  if (direction === 'up' && player.y > 0) targetY--;
+  if (direction === 'down' && player.y < gridSize - 1) targetY++;
+  if (direction === 'left' && player.x > 0) targetX--;
+  if (direction === 'right' && player.x < gridSize - 1) targetX++;
+  animateMovement(player, targetX, targetY, checkCollision);
+}
