@@ -7,6 +7,21 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div id="container">
+  <div id="gamePanel">
+    <canvas id="gameCanvas" width="600" height="600"></canvas>
+    <button id="showHint">Show Hint</button>
+    <p id="hint"></p>
+  </div>
+  <div id="codePanel">
+    <textarea id="editor" placeholder="Write your code here..."></textarea>
+    <button id="run">Run Code</button>
+  </div>
+  <div id="feedback">
+    <p id="message"></p>
+  </div>
+</div>
+
   <h1>CodeQuest</h1>
   <p id="instructions">Write code to move the player to the goal while avoiding enemies and collecting coins!</p>
   <canvas id="gameCanvas" width="600" height="600"></canvas>
