@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CodeQuest Advanced</title>
+  <title>Tile Game</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,6 +18,19 @@
   </div>
   <div id="feedback">
     <p id="message"></p>
+  <canvas id="gameCanvas" width="600" height="600"></canvas>
+
+  <!-- Player Movement Controls -->
+  <div id="controls">
+    <button onclick="movePlayer('upper left')">↖</button>
+    <button onclick="movePlayer('up')">↑</button>
+    <button onclick="movePlayer('upper right')">↗</button>
+    <button onclick="movePlayer('left')">←</button>
+    <button disabled style="visibility: hidden;"></button>
+    <button onclick="movePlayer('right')">→</button>
+    <button onclick="movePlayer('bottom left')">↙</button>
+    <button onclick="movePlayer('down')">↓</button>
+    <button onclick="movePlayer('bottom right')">↘</button>
   </div>
 </div>
 
@@ -27,7 +39,13 @@
   <canvas id="gameCanvas" width="600" height="600"></canvas>
   <textarea id="editor" placeholder="Write your code here..."></textarea>
   <button id="run">Run Code</button>
+  <!-- Code Editor -->
+  <textarea id="editor"></textarea>
+  <button id="run">Run</button>
+  <button id="showHint">Show Hint</button>
   <p id="message"></p>
+  <p id="hint"></p>
+
   <script src="game.js"></script>
   <button id="showHint">Show Hint</button>
 <p id="hint"></p>
