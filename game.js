@@ -136,3 +136,14 @@ document.getElementById('run').addEventListener('click', () => {
 });
 
 loadLevel(levels[levelIndex]);
+const hints = [
+  "Use 'movePlayer(\"right\")' and 'movePlayer(\"down\")' to move your character to the goal.",
+  "Collect all coins before heading to the goal. Use loops if needed."
+];
+
+function showHint() {
+  const hintBox = document.getElementById('hint');
+  hintBox.textContent = hints[levelIndex];
+}
+
+document.getElementById('showHint').addEventListener('click', showHint);
