@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CodeQuest Advanced</title>
-  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <h1>CodeQuest</h1>
+  <p id="instructions">Write code to move the player to the goal while avoiding enemies and collecting coins!</p>
+
+  <!-- Main Container -->
   <div id="container">
   <div id="gamePanel">
     <canvas id="gameCanvas" width="600" height="600"></canvas>
@@ -16,9 +14,34 @@
   <div id="codePanel">
     <textarea id="editor" placeholder="Write your code here..."></textarea>
     <button id="run">Run Code</button>
+    <!-- Game Panel -->
+    <div id="gamePanel">
+      <canvas id="gameCanvas" width="600" height="600"></canvas>
+      <button id="showHint">Show Hint</button>
+      <p id="hint"></p>
+    </div>
+
+    <!-- Code Editor Panel -->
+    <div id="codePanel">
+      <textarea id="editor" placeholder="Write your code here..."></textarea>
+      <button id="run">Run Code</button>
+      <p id="message"></p>
+    </div>
   </div>
   <div id="feedback">
     <p id="message"></p>
+
+  <!-- Player Movement Controls -->
+  <div id="controls">
+    <button onclick="movePlayer('upper left')">↖</button>
+    <button onclick="movePlayer('up')">↑</button>
+    <button onclick="movePlayer('upper right')">↗</button>
+    <button onclick="movePlayer('left')">←</button>
+    <button disabled style="visibility: hidden;"></button>
+    <button onclick="movePlayer('right')">→</button>
+    <button onclick="movePlayer('bottom left')">↙</button>
+    <button onclick="movePlayer('down')">↓</button>
+    <button onclick="movePlayer('bottom right')">↘</button>
   </div>
 </div>
 
@@ -28,6 +51,7 @@
   <textarea id="editor" placeholder="Write your code here..."></textarea>
   <button id="run">Run Code</button>
   <p id="message"></p>
+  <!-- Game Logic -->
   <script src="game.js"></script>
   <button id="showHint">Show Hint</button>
 <p id="hint"></p>
