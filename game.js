@@ -177,9 +177,25 @@ function animateMovement(entity, targetX, targetY, callback) {
 function movePlayer(direction) {
   let targetX = player.x;
   let targetY = player.y;
+
+  // Update target position based on direction
   if (direction === 'up' && player.y > 0) targetY--;
   if (direction === 'down' && player.y < gridSize - 1) targetY++;
   if (direction === 'left' && player.x > 0) targetX--;
   if (direction === 'right' && player.x < gridSize - 1) targetX++;
-  animateMovement(player, targetX, targetY, checkCollision);
-}
+  if (direction === 'upper left' && player.x > 0 && player.y > 0) {
+    targetX--;
+    targetY--;
+  }
+  if (direction === 'upper right' && player.x < gridSize - 1 && player.y > 0) {
+    targetX++;
+    targetY--;
+  }
+  if (direction === 'bottom left' && player.x > 0 && player.y < gridSize - 1) {
+    targetX--;
+    targetY++;
+  }
+  if (direction === 'bottom right' && player.x < gridSize - 1 && player.y < gridSize - 1) {
+    targetX++;
+    targetY++;
+  }
