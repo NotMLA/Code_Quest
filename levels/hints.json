@@ -1,0 +1,23 @@
+[
+  {
+    "level": 1,
+    "hint": "Use 'movePlayer(\"right\")' and 'movePlayer(\"down\")' to move your character to the goal."
+  },
+  {
+    "level": 2,
+    "hint": "You need to collect coins before reaching the goal. Plan your moves carefully!"
+  },
+  {
+    "level": 3,
+    "hint": "Some tiles have enemies that you must avoid. Plan your moves carefully to go around them. Use movePlayer(up), movePlayer(down), movePlayer(left), and movePlayer(right) to navigate. Collect all coins before reaching the goal."
+  },
+  {
+    "level":4,
+    "hint":"Enemies are moving! Observe their patterns before deciding your path. Use loops like for or while to repeat movements efficiently. Coins must be collected before you reach the goal. Think strategically!"
+  },
+  {
+    "level":5,
+    "hint":"This is the ultimate challenge! Multiple moving enemies with different patterns block your way. Plan a safe route to collect all coins and reach the goal. Be cautious and test small sections of your code before executing the entire solution."
+  }
+]
+
