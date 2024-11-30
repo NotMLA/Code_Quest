@@ -1,0 +1,6 @@
+{
+  "level": 1,
+  "goal": { "x": 4, "y": 4 },
+  "coins": [],
+  "enemies": []
+}
