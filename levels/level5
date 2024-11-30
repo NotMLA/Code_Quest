@@ -1,0 +1,15 @@
+{
+  "level": 5,
+  "goal": { "x": 9, "y": 9 },
+  "coins": [
+    { "x": 2, "y": 3 },
+    { "x": 5, "y": 5 },
+    { "x": 6, "y": 2 },
+    { "x": 7, "y": 7 }
+  ],
+  "enemies": [
+    { "x": 4, "y": 4, "movePattern": "horizontal" },
+    { "x": 6, "y": 6, "movePattern": "vertical" },
+    { "x": 7, "y": 2, "movePattern": "random" }
+  ]
+}
